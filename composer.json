@@ -1,0 +1,25 @@
+{
+    "name": "unstable-cacao/waterfall",
+    "type": "lib",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexey Puchkov",
+            "email": "alexey.pkv@gmail.com"
+        },
+        {
+            "name": "Marina Sherstuk",
+            "email": "marinashers@gmail.com"
+        }
+    ],
+    "require": {
+        "oktopost/skeleton": "^1.0",
+        "oktopost/objection": "^1.0",
+        "oktopost/squid": "^1.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Waterfall": "src"
+        }
+    }
+}

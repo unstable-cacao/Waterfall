@@ -1,6 +1,10 @@
 <?php
-use Skeleton\ConfigLoader\DirectoryConfigLoader;
+use Waterfall\Config\Config;
 use Waterfall\Exceptions\WaterfallException;
+
+use Skeleton\Type;
+use Skeleton\ConfigLoader\DirectoryConfigLoader;
+use Objection\Mapper;
 
 
 use Skeleton\Skeleton;
@@ -35,9 +39,9 @@ class Waterfall
 	}
 	
 	/**
-	 * 
+	 * @param string|\stdClass|array $config
 	 */
-	public static function config()
+	public static function config($config)
 	{
 		self::$skeleton = new Skeleton();
 		self::$skeleton
@@ -46,5 +50,8 @@ class Waterfall
 			->setConfigLoader(
 				new DirectoryConfigLoader(realpath(__DIR__ . '/../skeleton'))
 			);
+		
+		$config = Mapper::getObjectFrom(Config::class, $config);
+		self::$skeleton->set(Config::class, $config, Type::ByValue);
 	}
 }

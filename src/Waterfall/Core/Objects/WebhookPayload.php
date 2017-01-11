@@ -2,7 +2,7 @@
 namespace Waterfall\Core\Objects;
 
 
-class WebhookSubjects
+class WebhookPayload
 {
 
 }

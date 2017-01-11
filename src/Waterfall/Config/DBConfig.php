@@ -2,8 +2,10 @@
 namespace Waterfall\Config;
 
 
-use Objection\LiteObject;
 use Objection\LiteSetup;
+use Objection\LiteObject;
+
+use Squid\MySql\Config\MySqlConnectionConfig;
 
 
 /**
@@ -29,6 +31,17 @@ class DBConfig extends LiteObject
 		];
 	}
 	
+	
+	public function __debugInfo()
+	{
+		return [];
+	}
+	
+	
+	public function getConfig(): array
+	{
+		return $this->toArray(['Host', 'Pass', 'User', 'DBName']);
+	}
 	
 	public function getTableName(string $name): string
 	{

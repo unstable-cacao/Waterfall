@@ -2,7 +2,7 @@
 namespace Waterfall\Core\Enum;
 
 
-class WebhookOnFailAction
+class WebhookPayloadState
 {
 	use \Objection\TEnum;
 }

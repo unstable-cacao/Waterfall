@@ -2,23 +2,24 @@
 namespace Waterfall\Config;
 
 
-use Objection\LiteObject;
 use Objection\LiteSetup;
+use Objection\LiteObject;
 
 
 /**
  * @property DBConfig $DB
+ * @property DefaultValues $Defaults
  */
 class Config extends LiteObject
 {
-
 	/**
 	 * @return array
 	 */
 	protected function _setup()
 	{
 		return [
-			'DB'	=> LiteSetup::createInstanceOf(DBConfig::class)
+			'DB'	    => LiteSetup::createInstanceOf(DBConfig::class),
+			'Defaults'  => LiteSetup::createInstanceOf(DefaultValues::class)
 		];
 	}
 	
@@ -27,6 +28,7 @@ class Config extends LiteObject
 	{
 		parent::__construct();
 		$this->DB = new DBConfig();
+		$this->Defaults = new DefaultValues();
 	}
 	
 	

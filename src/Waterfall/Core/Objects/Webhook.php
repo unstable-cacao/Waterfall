@@ -14,6 +14,7 @@ use Waterfall\Core\Enum\WebhookState;
  * @property \DateTime	$Modified
  * @property string		$URL
  * @property string		$WebhookKey
+ * @property string		$Secret
  * @property string		$State
  * @property int		$MaxRetries
  * @property string		$OnFail
@@ -31,6 +32,7 @@ class Webhook extends LiteObject
 			'Modified' 		=> LiteSetup::createDateTime(),
 			'URL' 			=> LiteSetup::createString(null),
 			'WebhookKey'	=> LiteSetup::createString(null),
+			'Secret'		=> LiteSetup::createString(null),
 			'State' 		=> LiteSetup::createEnum(WebhookState::class),
 			'MaxRetries' 	=> LiteSetup::createInt(null),
 			'OnFail' 		=> LiteSetup::createEnum(WebhookOnFailAction::class)

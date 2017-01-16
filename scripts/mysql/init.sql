@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS `Webhook` (
   `Modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `URL` varchar(2048) NOT NULL,
   `WebhookKey` varchar(128) NULL,
+  `Secret` varchar(64) NOT NULL,
   `State` enum('active','disabled','paused') NOT NULL,
   `MaxRetries` int(11) NOT NULL,
   `OnFail` enum('abort','continue','pause') NOT NULL,

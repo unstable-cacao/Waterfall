@@ -14,8 +14,8 @@ interface IPayloadDAO
 	/**
 	 * Get number of payloads per webhook
 	 * @param int $webhook
-	 * @param null $payloadState
-	 * @return mixed
+	 * @param string|null $payloadState
+	 * @return int
 	 */
 	public function count(int $webhook, $payloadState = null);
 }

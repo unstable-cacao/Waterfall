@@ -3,7 +3,7 @@ namespace Waterfall\Base\DAO\Webhook;
 
 
 use Waterfall\Core\Objects\Subject;
-use Waterfall\Core\Objects\WebhookSubject;
+use Waterfall\Core\Objects\Webhook;
 
 
 interface IWebhookSubjectDAO
@@ -12,12 +12,12 @@ interface IWebhookSubjectDAO
 	public function delete(int $webhookID, int $subjectID);
 
 	/**
-	 * @return WebhookSubject[]
+	 * @return Subject[]
 	 */
 	public function getForWebhook(int $webhookID): array;
 	
 	/**
-	 * @return Subject[]
+	 * @return Webhook[]
 	 */
-	public function getForSubject(int $subject): array;
+	public function getForSubject(int $subjectID): array;
 }

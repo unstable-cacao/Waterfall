@@ -21,5 +21,5 @@ interface IWebhookDAO
 	/**
 	 * @return Subject[]
 	 */
-	public function getSubjects(): array;
+	public function getSubjects(int $webhookID): array;
 }
